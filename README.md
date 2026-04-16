@@ -15,6 +15,12 @@ Praktikum3
 #<img width="1671" height="927" alt="image" src="https://github.com/user-attachments/assets/6e168e8b-209a-46b1-9179-1056a0935809" />#
 #<img width="325" height="507" alt="image" src="https://github.com/user-attachments/assets/b9c44aee-ea78-49ad-912e-500b887c138d" />#
 
+|Deskripsi|Dokumentasitugas5|
+|---|---|
+|Penambahan kolom role pada tabel users di database|<img width="1579" height="588" alt="image" src="https://github.com/user-attachments/assets/18b47209-3bb2-4e5d-a800-ddbc7895521a" />|
+
+
+
 
 
 
