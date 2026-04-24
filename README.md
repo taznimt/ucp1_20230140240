@@ -90,7 +90,7 @@ routes/
 | Deskripsi | Dokumentasi UCP1 |
 |---|---|
 |dashboard admin|<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/2f84aa52-5c87-4515-8503-10d1f82023db" />|
-|dashboard user|<img width="1918" height="1009" alt="image" src="https://github.com/user-attachments/assets/b9d90dc1-ca38-4db6-a329-89961085bbae" />|
+|dashboard user|<img width="1919" height="1013" alt="image" src="https://github.com/user-attachments/assets/bf0478b1-b63f-4ebf-a314-5b43d8884170" />|
 |halaman kategory|<img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/346bbedf-d259-4fb2-bd8b-d8c4fece4bab" />|
 |insert kategory|<img width="1919" height="1014" alt="image" src="https://github.com/user-attachments/assets/b1a10beb-9484-418a-afde-fc68424dc55e" />|
 |berhasil menambahkan kategori|<img width="1919" height="1012" alt="image" src="https://github.com/user-attachments/assets/4a1c6a0f-81ea-48f9-9221-b2ccc3e5448e" />|
