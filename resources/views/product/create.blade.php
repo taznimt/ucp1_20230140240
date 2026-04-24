@@ -24,17 +24,29 @@
 
                     <div class="mb-4">
                         <label class="block mb-1 text-gray-700 dark:text-gray-200">Nama Product</label>
-                        <input type="text" name="name" value="{{ old('name') }}" class="w-full rounded border-gray-300">
+                        <input type="text" name="name" value="{{ old('name') }}" class="w-full rounded border-gray-300 text-black">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block mb-1 text-gray-700 dark:text-gray-200">Kategori</label>
+                        <select name="category_id" class="w-full rounded border-gray-300 text-black">
+                            <option value="">-- Pilih Kategori --</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="mb-4">
                         <label class="block mb-1 text-gray-700 dark:text-gray-200">Qty</label>
-                        <input type="number" name="qty" value="{{ old('qty') }}" class="w-full rounded border-gray-300">
+                        <input type="number" name="qty" value="{{ old('qty') }}" class="w-full rounded border-gray-300 text-black">
                     </div>
 
                     <div class="mb-4">
                         <label class="block mb-1 text-gray-700 dark:text-gray-200">Price</label>
-                        <input type="number" step="0.01" name="price" value="{{ old('price') }}" class="w-full rounded border-gray-300">
+                        <input type="number" step="0.01" name="price" value="{{ old('price') }}" class="w-full rounded border-gray-300 text-black">
                     </div>
 
                     <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">

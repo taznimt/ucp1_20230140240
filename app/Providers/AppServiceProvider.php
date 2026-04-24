@@ -17,10 +17,12 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        Gate::define('manage-product', function (User $user) {
+        // Gate akses category hanya untuk admin
+        Gate::define('manage-category', function (User $user) {
             return $user->role === 'admin';
         });
 
+        // Policy product
         Gate::policy(Product::class, ProductPolicy::class);
     }
 }

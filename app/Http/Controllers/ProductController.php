@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,22 +12,28 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('user')->latest()->get();
+        // ambil semua product beserta user dan category
+        $products = Product::with(['user', 'category'])->latest()->get();
+
         return view('product.index', compact('products'));
     }
 
     public function create()
     {
-        return view('product.create');
+        // ambil semua category untuk dropdown
+        $categories = Category::orderBy('name')->get();
+
+        return view('product.create', compact('categories'));
     }
 
     public function store(StoreProductRequest $request)
     {
         Product::create([
             'user_id' => Auth::id(),
-            'name'    => $request->name,
-            'qty'     => $request->qty,
-            'price'   => $request->price,
+            'category_id' => $request->category_id,
+            'name' => $request->name,
+            'qty' => $request->qty,
+            'price' => $request->price,
         ]);
 
         return redirect()->route('product.index')->with('success', 'Product berhasil ditambahkan');
@@ -34,7 +41,8 @@ class ProductController extends Controller
 
     public function show(string $id)
     {
-        $product = Product::with('user')->findOrFail($id);
+        $product = Product::with(['user', 'category'])->findOrFail($id);
+
         return view('product.view', compact('product'));
     }
 
@@ -43,7 +51,10 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $this->authorize('update', $product);
 
-        return view('product.edit', compact('product'));
+        // ambil semua category untuk dropdown
+        $categories = Category::orderBy('name')->get();
+
+        return view('product.edit', compact('product', 'categories'));
     }
 
     public function update(UpdateProductRequest $request, string $id)
@@ -52,8 +63,9 @@ class ProductController extends Controller
         $this->authorize('update', $product);
 
         $product->update([
-            'name'  => $request->name,
-            'qty'   => $request->qty,
+            'category_id' => $request->category_id,
+            'name' => $request->name,
+            'qty' => $request->qty,
             'price' => $request->price,
         ]);
 
