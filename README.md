@@ -1,45 +1,115 @@
-praktilum1 
-#<img width="1917" height="1026" alt="image" src="https://github.com/user-attachments/assets/f0c86e59-8fbb-4d7a-bd9a-22a40175a465" />#
-praktikum2
-#<img width="1914" height="1026" alt="image" src="https://github.com/user-attachments/assets/2a715337-44f6-4ded-8933-9389ef65a3f9" />#
-#<img width="1913" height="1028" alt="image" src="https://github.com/user-attachments/assets/8ce01dce-6011-4f02-9107-24cf49fd3037" />#
-#<img width="1918" height="1008" alt="image" src="https://github.com/user-attachments/assets/00bb7e1d-9e9e-4493-b32a-16d1a3ae25d9" />#
-#<img width="1919" height="1024" alt="image" src="https://github.com/user-attachments/assets/32d01ca8-ee41-40f3-a391-6230e1420c06" />#
+# CRUD Category Laravel
 
-Praktikum3
-#<img width="1120" height="878" alt="image" src="https://github.com/user-attachments/assets/5d8570e5-34c0-4cff-b2a1-f9c47eaf7be6" />#
-#<img width="1673" height="845" alt="image" src="https://github.com/user-attachments/assets/189f9550-6f58-43ef-8012-eb280f6f94c7" />#
-#<img width="1671" height="925" alt="image" src="https://github.com/user-attachments/assets/9a8588f9-39da-490b-b21c-43731e5430fc" />#
-#<img width="1688" height="915" alt="image" src="https://github.com/user-attachments/assets/7b417720-0d3a-4cd1-bd02-47da7009d8e5" />#
-#<img width="1666" height="850" alt="image" src="https://github.com/user-attachments/assets/5e1444aa-2a90-4085-89d7-5b5e4542db87" />#
-#<img width="1671" height="927" alt="image" src="https://github.com/user-attachments/assets/6e168e8b-209a-46b1-9179-1056a0935809" />#
-#<img width="325" height="507" alt="image" src="https://github.com/user-attachments/assets/b9c44aee-ea78-49ad-912e-500b887c138d" />#
+## Deskripsi
+Project ini merupakan lanjutan dari modul sebelumnya dengan menambahkan fitur **CRUD Category** pada Laravel.
 
-|Deskripsi|Dokumentasitugas5|
+Pada tugas ini dibuat:
+- CRUD Category
+- relasi antara **Product** dan **Category**
+- tampilan **total product** pada setiap category
+- perubahan form **Add Product** agar dapat memilih category
+- gate akses untuk halaman **Category**
+- tampilan **role user** pada halaman dashboard
+
+---
+
+## Fitur
+- Menampilkan daftar category
+- Menambah category
+- Mengedit category
+- Menghapus category
+- Menampilkan total product pada setiap category
+- Relasi category pada product
+- Dropdown category pada form add product
+- Gate akses category hanya untuk admin
+- Role user tampil pada dashboard
+
+---
+
+## Alur Project
+
+### 1. Menambahkan relasi category ke product
+Kolom `category_id` ditambahkan ke tabel `products` agar setiap product dapat terhubung ke satu category.
+
+### 2. Membuat CRUD Category
+Fitur CRUD Category dibuat menggunakan:
+- `CategoryController`
+- route resource
+- view category
+
+### 3. Menampilkan total product
+Pada halaman category digunakan relasi Laravel untuk menampilkan jumlah product pada setiap category.
+
+### 4. Mengubah form Add Product
+Form tambah product diubah agar user dapat memilih category melalui dropdown.
+
+### 5. Menambahkan gate akses
+Gate ditambahkan agar hanya admin yang dapat mengakses menu dan halaman category.
+
+### 6. Menampilkan role di dashboard
+Role user yang sedang login ditampilkan di halaman dashboard:
+- `Role: Admin`
+- `Role: User`
+
+---
+
+## Struktur File Utama
+```bash
+app/
+├── Http/
+│   ├── Controllers/
+│   │   ├── CategoryController.php
+│   │   └── ProductController.php
+│   └── Requests/
+│       ├── StoreProductRequest.php
+│       └── UpdateProductRequest.php
+├── Models/
+│   ├── Category.php
+│   └── Product.php
+├── Providers/
+│   └── AppServiceProvider.php
+
+resources/
+└── views/
+    ├── category/
+    │   ├── index.blade.php
+    │   ├── create.blade.php
+    │   └── edit.blade.php
+    ├── product/
+    │   ├── create.blade.php
+    │   └── edit.blade.php
+    ├── layouts/
+    │   └── navigation.blade.php
+    └── dashboard.blade.php
+
+routes/
+└── web.php
+```
+
+
+| Deskripsi | Dokumentasi UCP1 |
 |---|---|
-|Penambahan kolom role pada tabel users di database|<img width="1566" height="873" alt="image" src="https://github.com/user-attachments/assets/235c488e-f114-441b-a676-608df77f1f4f" />|
-|Tampilan navbar akun dan halaman product admin|<img width="1916" height="994" alt="image" src="https://github.com/user-attachments/assets/53de27ba-61c9-41e8-8626-82127c07a4ce" />|
-|Tampilan user biasa tanpa menu product|<img width="1913" height="1012" alt="image" src="https://github.com/user-attachments/assets/8f219468-d5da-43e0-b3b5-a9b78d32437b" />|
-|Pembatasan akses route product untuk user biasa|<img width="1914" height="1009" alt="image" src="https://github.com/user-attachments/assets/0687636b-8d97-4e08-8ecb-c84dcea40325" />|
-|Penerapan ProductPolicy pada data product|<img width="1914" height="1012" alt="image" src="https://github.com/user-attachments/assets/90979630-57de-447f-9a07-8f84cf2bcdc1" />|
-|tampilan halaman view|<img width="1912" height="1023" alt="image" src="https://github.com/user-attachments/assets/bdc6930e-a904-4a9b-a733-11ee2ebc9b63" />|
-|Hapus data|<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/503a4826-b04d-4b6d-be50-f6a256f443ab" />|
-|Berhasil hapus data|<img width="1919" height="1013" alt="image" src="https://github.com/user-attachments/assets/4f78b9d5-4e0a-4b58-9023-7101e63b7970" />|
+|dashboard admin|<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/2f84aa52-5c87-4515-8503-10d1f82023db" />|
+|dashboard user|<img width="1919" height="1013" alt="image" src="https://github.com/user-attachments/assets/bf0478b1-b63f-4ebf-a314-5b43d8884170" />|
+|halaman kategory|<img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/346bbedf-d259-4fb2-bd8b-d8c4fece4bab" />|
+|insert kategory|<img width="1919" height="1014" alt="image" src="https://github.com/user-attachments/assets/b1a10beb-9484-418a-afde-fc68424dc55e" />|
+|berhasil menambahkan kategori|<img width="1919" height="1012" alt="image" src="https://github.com/user-attachments/assets/4a1c6a0f-81ea-48f9-9221-b2ccc3e5448e" />|
+|edit kategori|<img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/35a907b2-1424-45cd-8b11-869a8527d337" />|
+|berhasil edit kategori|<img width="1919" height="1012" alt="image" src="https://github.com/user-attachments/assets/2916efce-5b07-496a-805f-c350288d92ed" />|
+|hapus kategori|<img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/cc9323c4-c162-4e82-bf68-88730670327f" />|
+|berhasil hapus kategori|<img width="1919" height="1010" alt="image" src="https://github.com/user-attachments/assets/c81b6f66-abf9-4b86-b847-0f55601c4f79" />|
+|add product|<img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/5afd37c4-4232-4e93-b430-65153b6d296b" />|
+|berhasil tambah produk|<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/99553065-cd7f-4146-9fee-37d0cd937d58" />|
 
 
 
 
-|Deskripsi|Dokumentasitugas6|
-|---|---|
-|Validasi form tambah product saat input kosong|<img width="1919" height="1022" alt="image" src="https://github.com/user-attachments/assets/4c6e8964-377d-44e4-9fe1-0c087cad01fd" />|
-|Validasi form tambah product dengan input tidak valid|<img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/c5bea032-d6e5-454c-8ada-51e8481b60f1" />
-|Validasi form edit product|<img width="1917" height="1016" alt="image" src="https://github.com/user-attachments/assets/64348a38-2649-4deb-a62e-ea23efd57b3e" />|
-|edit data dengan input yang valid|<img width="1919" height="950" alt="image" src="https://github.com/user-attachments/assets/13e898e8-173b-4f36-b218-3aaa6643ad2c" />|
-|berhasil di edit|<img width="1919" height="1014" alt="image" src="https://github.com/user-attachments/assets/85528e50-6fbb-4608-a610-fb782cda6091" />|
 
-|Deskripsi|Dokumentasitugas7|
-|---|---|
-|tombol Edit dan Delete pada menu view|<img width="1911" height="1012" alt="image" src="https://github.com/user-attachments/assets/9e360994-3688-4388-9b36-c42722aa59a3" />|
+
+
+
+
+
 
 
 
