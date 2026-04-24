@@ -84,9 +84,10 @@ resources/
 
 routes/
 └── web.php
+```
 
 
-|Deskripsi|DokumentasiUCP1|
+| Deskripsi | Dokumentasi UCP1 |
 |---|---|
 |dashboard admin|<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/2f84aa52-5c87-4515-8503-10d1f82023db" />|
 |dashboard user|<img width="1918" height="1009" alt="image" src="https://github.com/user-attachments/assets/b9d90dc1-ca38-4db6-a329-89961085bbae" />|
